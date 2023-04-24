@@ -11,6 +11,8 @@ void print_s(char *str, int *count)
 {
 	int i;
 
+	str = !str ? "(null)" : str;
+
 	for (i = 0; str[i]; i++)
 		print_c(str[i], count);
 }

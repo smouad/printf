@@ -1,25 +1,13 @@
 #include "main.h"
 
-void print_base(long int nbr, int base, char spes, char flag, int *count)
+void print_base(unsigned int nbr, int base, char spes, int *count)
 {
-	char *small = "0123456789abcdef";
-	char *big = "0123456789ABCDEF";
+	char *lower = "0123456789abcdef";
+	char *upper = "0123456789ABCDEF";
 	char *list;
 
-	if (flag == 'h')
-		nbr = (short int)nbr;
+	list = spes == 'X' ? upper : lower;
 
-	if (spes == 'u' || spes == 'o'\
-	|| spes == 'x' || spes == 'X')
-		nbr = (unsigned int)nbr;
-
-	list = spes == 'x' ? small : big;
-
-	if ((flag == '+' || flag == ' ') && base == 10)
-	{
-		print_c(flag, count);
-		flag = 'x';
-	}
 
 	if (nbr < 0)
 	{
@@ -32,7 +20,7 @@ void print_base(long int nbr, int base, char spes, char flag, int *count)
 	
 	else
 	{
-		print_base(nbr / base, base, spes, flag, count);
-		print_base(nbr % base, base, spes, flag, count);
+		print_base((nbr / base), base, spes, count);
+		print_base((nbr % base), base, spes,count);
 	}
 }

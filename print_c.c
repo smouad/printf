@@ -7,7 +7,7 @@
  * Return: void
  */
 
-void print_c(char c, int *count)
+void print_c(int c, int *count)
 {
 	write(1, &c, 1);
 	(*count)++;
