@@ -29,24 +29,6 @@ void _putnbr(int n, int *len)
 }
 
 /**
- * _putnbr_binary - print the binary of a number
- * @n: the number in hand
- * @len: it counts the printed characters
- * Return: nothing
- */
-
-void _putnbr_binary(unsigned int n, int *len)
-{
-	if (n == 0 || n == 1)
-		*len += _putchar(n + '0');
-	else
-	{
-		_putnbr_binary(n / 2, len);
-		_putnbr_binary(n % 2, len);
-	}
-}
-
-/**
  * _putnbr_hex - print the hex value of an int
  * @n: the number to be converted to hex
  * @isupper: flag to specify if the hex is upper or lower case
