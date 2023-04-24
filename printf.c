@@ -10,8 +10,6 @@
 
 void handle_format(va_list args, int c, int *len)
 {
-	unsigned long int address;
-
 	if (c == 'c')
 		*len += _putchar(va_arg(args, int));
 	else if (c == '%')
@@ -34,9 +32,8 @@ void handle_format(va_list args, int c, int *len)
 		_putnbr_base(va_arg(args, unsigned int), 1, 16, len);
 	else if (c == 'p')
 	{
-		address = (unsigned long int)va_arg(args, void *)
 		*len += _putstr("0x", 0);
-		_putnbr_base(address, 0, 16, len);
+		_putnbr_base(va_arg(args, unsigned long int), 0, 16, len);
 	}
 	else if (c == 'R')
 		*len += _putrot13(va_arg(args, char *));
