@@ -1,9 +1,2 @@
-<h1 align='center'>printf</h1>
-
-This repository contains the Alx program printf project
-
-## Authors
-
-	Mouad Sodor
-
-	Youssef El Aissaoui
+this project aims to produce the same of some of the behaviour as the printf of the stdio library in c
+>)
