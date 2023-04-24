@@ -57,12 +57,8 @@ int _putrev(char *str)
 		return (_putstr("(null)", 0));
 	while (str[i])
 		i++;
-	i--;
-	while (i >= 0)
-	{
+	while (i--)
 		len += _putchar(str[i]);
-		i--;
-	}
 	return (len);
 }
 
