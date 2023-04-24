@@ -37,7 +37,7 @@ void _putnbr(int n, int *len)
  * Return: nothing
  */
 
-void _putnbr_base(unsigned int n, int isupper, int base, int *len)
+void _putnbr_base(unsigned long int n, int isupper, int base, int *len)
 {
 	char *base_letters;
 
