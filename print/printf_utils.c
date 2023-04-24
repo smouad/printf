@@ -30,7 +30,7 @@ void _putstr(char *str, int *count)
 		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
 		{
 			_putstr("\\x0", count);
-			print_base(str[i], 16, 'X', count);
+			_putnbr_base(str[i], 16, 'X', count);
 				i++;
 			if (str[i] == '\0')
 			return;
