@@ -16,7 +16,7 @@ void format_handler(va_list args, char pres, int *count)
 	else if (pres == 's')
 		_putstr(va_arg(args, char*), count);
 	else if (pres == 'd' || pres == 'i')
-		print_d(va_arg(args, int), count);
+		_putnbr(va_arg(args, int), count);
 	else if (pres == 'r')
 		_putrev(va_arg(args, char*), count);
 	else if (pres == 'x' || pres == 'X')
