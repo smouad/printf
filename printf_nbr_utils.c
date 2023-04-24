@@ -29,7 +29,7 @@ void _putnbr(int n, int *len)
 }
 
 /**
- * _putnbr_hex - print the hex value of an int
+ * _putnbr_base - print the hex value of an int
  * @n: the number to be converted to hex
  * @isupper: flag to specify if the hex is upper or lower case
  * @base: the base to conver to
