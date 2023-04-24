@@ -33,7 +33,7 @@ void handle_format(va_list args, int c, int *len)
 	else if (c == 'p')
 	{
 		*len += _putstr("0x", 0);
-		_putnbr_base(va_arg(args, unsigned long int), 0, 16, len);
+		_putnbr_base(va_arg(args, unsigned int), 0, 16, len);
 	}
 	else if (c == 'R')
 		*len += _putrot13(va_arg(args, char *));
