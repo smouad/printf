@@ -13,8 +13,11 @@ void format_handler(va_list args, char pres, int *count)
 	else if (pres == 'r')
 		print_r(va_arg(args, char*), count);
 	else if (pres == 'x' || pres == 'X')
-		print_base()
-
+		print_base(va_arg(args, int), 16, pres, count);
+	else if (pres == 'p') {
+		print_s("0x", count);
+		print_base(va_arg(args, int), 16, 'x', count);
+	}
 }
 
 int _printf(const char *format, ...)
