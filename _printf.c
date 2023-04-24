@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * format_handler - handle the format
+ * @args: args
+ * @count: poiner to a counter
+ * @pres: precision
+ */
+
 void format_handler(va_list args, char pres, int *count)
 {
 	if (pres == 'c')
@@ -14,11 +21,18 @@ void format_handler(va_list args, char pres, int *count)
 		print_r(va_arg(args, char*), count);
 	else if (pres == 'x' || pres == 'X')
 		print_base(va_arg(args, int), 16, pres, count);
-	else if (pres == 'p') {
+	else if (pres == 'p')
+	{
 		print_s("0x", count);
 		print_base(va_arg(args, int), 16, 'x', count);
 	}
 }
+
+/**
+ * _printf - function printf
+ * @format: format
+ * Return: the number of bytes printed
+ */
 
 int _printf(const char *format, ...)
 {
@@ -44,5 +58,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	return(count);
+	return (count);
 }

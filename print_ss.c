@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * print_S - print_s a and put \0x insted non print
+ * @str: string to print_
+ * @count: poiner to a counter
+ * Return: void
+ */
+
 void print_S(char *str, int *count)
 {
 	int i;

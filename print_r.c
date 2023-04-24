@@ -1,9 +1,15 @@
 #include "main.h"
 
+/**
+ * print_r - prints a string on reverse
+ * @str: string
+ * @count: count
+ */
+
 void print_r(char *str, int *count)
 {
 	int len;
-	
+
 	if (!str)
 	{
 		write(1, "(null)", 6);
