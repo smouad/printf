@@ -50,7 +50,6 @@ void _putnbr_base(unsigned int nbr, unsigned int base, char spes, int *count)
 		_putchar('-', count);
 		nbr = -nbr;
 	}
-
 	if (nbr < base)
 		_putchar(list[nbr], count);
 
