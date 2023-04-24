@@ -12,14 +12,16 @@ void handle_format(va_list args, int c, int *len)
 {
 	if (c == 'c')
 		*len += _putchar(va_arg(args, int));
-	else if (c == 's')
-		*len += _putstr(va_arg(args, char *), 0);
 	else if (c == '%')
 		*len += _putchar('%');
+	else if (c == 's')
+		*len += _putstr(va_arg(args, char *), 0);
+	else if (c == 'S')
+		*len += _putstr(va_arg(args, char *), 1);
 	else if (c == 'd' || c == 'i')
 		_putnbr(va_arg(args, int), len);
 	else if (c == 'b')
-		_putnbr_binary(va_arg(args, int), len);
+		_putnbr_base(va_arg(args, int), 0, 2, len);
 	else if (c == 'u')
 		_putnbr_base(va_arg(args, unsigned int), 0, 10, len);
 	else if (c == 'o')
@@ -28,8 +30,6 @@ void handle_format(va_list args, int c, int *len)
 		_putnbr_base(va_arg(args, unsigned int), 0, 16, len);
 	else if (c == 'X')
 		_putnbr_base(va_arg(args, unsigned int), 1, 16, len);
-	else if (c == 'S')
-		*len += _putstr(va_arg(args, char *), 1);
 	else if (c == 'p')
 	{
 		*len += _putstr("0x", 0);
