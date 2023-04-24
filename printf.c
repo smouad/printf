@@ -1,19 +1,5 @@
 #include "main.h"
 
-void print_address(va_list ap, int *counter)
-{
-	unsigned long int addrr;
-
-	addrr = va_arg(ap, unsigned long int);
-	if (addrr)
-	{
-		*counter += putstr("0x", 0);
-		put_address(addrr, counter);
-	}
-	else
-		*counter += putstr("(nil)", 0);
-}
-
 /**
  *select_id - executes the right function
  *@ap: the aprgument pointer of the variadic function
