@@ -3,7 +3,7 @@
 /**
  * format_handler - handle the format
  * @args: args
- * @count: poiner to a counter
+ * @count: poiner to a count
  * @pres: precision
  */
 
@@ -38,12 +38,13 @@ void format_handler(va_list args, char pres, int *count)
 
 int _printf(const char *format, ...)
 {
-	int count = 0, i = 0;
+	int i = 0;
+	int count = 0;
 	va_list args;
 
+	va_start(args, format);
 	if (!format)
 		return (-1);
-	va_start(args, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
