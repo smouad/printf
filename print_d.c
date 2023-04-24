@@ -8,7 +8,7 @@
  */
 
 void print_d(int nbr, int *count)
-{
+{ 
 	if (nbr < 0)
 	{
 		print_c('-', count);
