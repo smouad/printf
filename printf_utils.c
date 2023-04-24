@@ -52,10 +52,10 @@ void _putrev(char *str, int *count)
 
 	if (!str)
 	{
-		write(1, "(null)", 6);
-		(*count) += 6;
+		(*count) += write(1, "(null)", 6);
 		return;
 	}
+	len = 0;
 	while (str[len] != '\0')
 		len++;
 	while (len--)

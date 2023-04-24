@@ -29,7 +29,7 @@ void format_handler(va_list args, char pres, int *count)
 		_putnbr_base(va_arg(args, int), 16, pres, count);
 	else if (pres == 'p')
 	{
-		print_s("0x", count);
+		_putstr("0x", count);
 		_putnbr_base(va_arg(args, int), 16, 'x', count);
 	}
 	else
