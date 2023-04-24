@@ -33,7 +33,7 @@ int _putstr(char *s, int all)
 			len += _putchar('x');
 			if (s[i] < 16)
 				len += _putchar('0');
-			_putnbr_base((unsigned int)s[i], 1, 16, &len);
+			_putnbr_base((unsigned int)s[i], 0, 16, &len);
 		}
 		else
 			len += _putchar(s[i]);
