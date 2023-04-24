@@ -35,10 +35,10 @@ void handle_format(va_list args, int c, int *len)
 		*len += _putstr("0x", 0);
 		_putnbr_base(va_arg(args, unsigned long int), 0, 16, len);
 	}
-	else if (c == 'r')
-		*len += _putrev(va_arg(args, char *));
-	else if (c == 'R')
-		*len += _putrot13(va_arg(args, char *));
+	// else if (c == 'r')
+	// 	*len += _putrev(va_arg(args, char *));
+	// else if (c == 'R')
+	// 	*len += _putrot13(va_arg(args, char *));
 	else
 	{
 		*len += _putchar('%');
