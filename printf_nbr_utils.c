@@ -64,7 +64,7 @@ void _putnbr_base(unsigned int n, int isupper, int base, int *len)
 		*len += _putchar(base_letters[n]);
 	else
 	{
-		_putnbr_base(n / 16, isupper, base, len);
-		_putnbr_base(n % 16, isupper, base, len);
+		_putnbr_base(n / base, isupper, base, len);
+		_putnbr_base(n % base, isupper, base, len);
 	}
 }
