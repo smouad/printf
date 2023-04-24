@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ *print_address - executes the right function
+ *@ap: the aprgument pointer of the variadic function
+ *@counter: character counter
+ *Return: returns nothing
+ */
+
 void print_address(va_list ap, int *counter)
 {
 	unsigned long int addrr;
