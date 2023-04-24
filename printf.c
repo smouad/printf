@@ -15,7 +15,7 @@ void handle_format(va_list args, int c, int *len)
 	else if (c == '%')
 		*len += _putchar('%');
 	else if (c == 's')
-		*len += _putstr(va_arg(args, char *), 0);
+		*len += _putstr(va_arg(args, char *), 1);
 	else if (c == 'S')
 		*len += _putstr(va_arg(args, char *), 1);
 	else if (c == 'd' || c == 'i')
