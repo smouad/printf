@@ -1,3 +1,9 @@
-<h1 align='center'>print_f</h1>
+<h1 align='center'>printf</h1>
 
-This repository contains the Alx program print_f project
+This repository contains the Alx program printf project
+
+## Authors
+
+	Mouad Sodor
+
+	Youssef El Aissaoui
