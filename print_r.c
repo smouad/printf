@@ -1,12 +1,19 @@
 #include "main.h"
 
-void print_r(char *str, int *count)
+void print_R(char *str, int *count)
 {
-	int len;
+	int i;
 
-	for (len = 0; str[len]; len++)
-	;
+	for (i = 0; str[i]; i++)
+	{
+		if ((str[i] >= 'a' && str[i] <= 'm')\
+		|| (str[i] >= 'A' && str[i] <= 'M'))
+			print_c(str[i] + 13, count);
 
-	while (len--)
-		print_c(str[len], count);
+		else if ((str[i] >= 'n' && str[i] <= 'z')\
+		|| (str[i] >= 'N' && str[i] <= 'Z'))
+			print_c(str[i] - 13, count);
+		else
+			print_c(str[i], count);
+	}
 }
