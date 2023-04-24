@@ -14,11 +14,11 @@ void format_handler(va_list args, char pres, int *count)
 	else if (pres == 'c')
 		_putchar(va_arg(args, int), count);
 	else if (pres == 's')
-		_putstr(va_arg(args, char*), count);
+		_putstr(va_arg(args, char *), count);
 	else if (pres == 'd' || pres == 'i')
 		_putnbr(va_arg(args, int), count);
 	else if (pres == 'r')
-		_putrev(va_arg(args, char*), count);
+		_putrev(va_arg(args, char *), count);
 	else if (pres == 'x' || pres == 'X')
 		_putnbr_base(va_arg(args, int), 16, pres, count);
 	else if (pres == 'p')
@@ -26,6 +26,8 @@ void format_handler(va_list args, char pres, int *count)
 		print_s("0x", count);
 		_putnbr_base(va_arg(args, int), 16, 'x', count);
 	}
+	else if (pres == 'R')
+		_putrot13(va_arg(args, char *), count);
 	else
 		_putchar(pres ,count);
 }
