@@ -9,12 +9,12 @@
 
 void format_handler(va_list args, char pres, int *count)
 {
-	if (pres == 'c')
+	if (pres == '%')
+		_putchar('%', count);
+	else if (pres == 'c')
 		_putchar(va_arg(args, int), count);
 	else if (pres == 's')
-		print_s(va_arg(args, char*), count);
-	else if (pres == '%')
-		_putchar('%', count);
+		_putstr(va_arg(args, char*), count);
 	else if (pres == 'd' || pres == 'i')
 		print_d(va_arg(args, int), count);
 	else if (pres == 'r')
