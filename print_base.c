@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_base(unsigned int nbr, int base, char spes, int *count)
+void print_base(unsigned int nbr, unsigned int base, char spes, int *count)
 {
 	char *lower = "0123456789abcdef";
 	char *upper = "0123456789ABCDEF";
