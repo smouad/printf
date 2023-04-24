@@ -18,7 +18,7 @@ void format_handler(va_list args, char pres, int *count)
 	else if (pres == 'd' || pres == 'i')
 		print_d(va_arg(args, int), count);
 	else if (pres == 'r')
-		print_r(va_arg(args, char*), count);
+		_putrev(va_arg(args, char*), count);
 	else if (pres == 'x' || pres == 'X')
 		_putnbr_base(va_arg(args, int), 16, pres, count);
 	else if (pres == 'p')

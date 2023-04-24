@@ -15,7 +15,7 @@ void _putchar(int c, int *count)
 }
 
 /**
- * _putstr - _putstr a and put \0x insted non print
+ * _putstr - print a string and put \0x instead non print
  * @str: string to print_
  * @count: poiner to a counter
  * Return: void
@@ -25,6 +25,11 @@ void _putstr(char *str, int *count)
 {
 	int i;
 
+	if (!str)
+	{
+		str = "(null)";
+		return ;
+	}
 	for (i = 0; str[i]; i++)
 	{
 		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
@@ -39,3 +44,24 @@ void _putstr(char *str, int *count)
 	}
 }
 
+/**
+ * _putrev - prints a string on reverse
+ * @str: string
+ * @count: count
+ */
+
+void _putrev(char *str, int *count)
+{
+	int len;
+
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		(*count) += 6;
+		return;
+	}
+	while (str[len] != '\0')
+		len++;
+	while (len--)
+		_putchar(str[len], count);
+}

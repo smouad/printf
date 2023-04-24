@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_r - prints a string on reverse
+ * _putrev - prints a string on reverse
  * @str: string
  * @count: count
  */
 
-void print_r(char *str, int *count)
+void _putrev(char *str, int *count)
 {
 	int len;
 

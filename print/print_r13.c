@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_R - prints a string on rot13
+ * _putrev - prints a string on rot13
  * @str: string
  * @count: count
  */
 
-void print_R(char *str, int *count)
+void _putrev(char *str, int *count)
 {
 	int i;
 
