@@ -4,6 +4,8 @@ void print_S(char *str, int *count)
 {
 	int i;
 
+	str = !str ? "(null)" : str;
+
 	for (i = 0; str[i]; i++)
 	{
 		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)

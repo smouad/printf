@@ -1,21 +1,21 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/* Includes */
 #include <unistd.h>
-#include <stdio.h>
+#include <stdarg.h>
+#include <limits.h>
 
-/* Declaration */
-void print_s(char *str, int *count);
-void print_c(char c, int *count);
-void print_d(int nbr, int *count);
-void print_b(unsigned int k, int *count);
-void print_o(unsigned int o, int *count);
-void print_u(unsigned int u, int *count);
-void print_base(long int u_nbr, int base, char spes, char flag, int *count);
-void print_S(char *str, int *count);
-void print_R(char *str, int *count);
-void print_r(char *str, int *count);
-
+int	_putchar(int c);
+int	putstr(char *s, int all);
+int	_printf(const char *format, ...);
+int	rev_str(char *str);
+int	rot13(char *str);
+void	print_address(va_list ap, int *counter);
+void	select_id(va_list ap, int c, int *counter);
+void	putnbr(int n, int *counter);
+void	putnbr_binary(unsigned int n, int *counter);
+void	putnbr_hex(unsigned int n, int isupper, int *counter);
+void	put_address(unsigned long int n, int *counter);
+void	putunbr_octal(unsigned int n, unsigned int base, int *counter);
 
 #endif
