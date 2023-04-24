@@ -17,7 +17,7 @@ void _putchar(int c, int *count)
 /**
  * _putstr - print a string and put \0x instead non print
  * @str: string to print_
- * @count: poiner to a counter
+ * @count: poiner to a len
  * Return: void
  */
 
@@ -31,7 +31,7 @@ void _putstr(char *str, int *count)
 		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
 		{
 			_putstr("\\x0", count);
-			_putnbr_base(str[i], 16, 'X', count);
+			__putnbr_base(str[i], 16, 'X', count);
 				i++;
 			if (str[i] == '\0')
 			return;
@@ -63,12 +63,12 @@ void _putrev(char *str, int *count)
 }
 
 /**
- * _putrot13 - prints a string on rot13
+ * _put_putrot13 - prints a string on _putrot13
  * @str: string
  * @count: count
  */
 
-void _putrot13(char *str, int *count)
+void _put_putrot13(char *str, int *count)
 {
 	int i;
 

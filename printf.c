@@ -1,82 +1,64 @@
 #include "main.h"
 
 /**
- *print_address - executes the right function
- *@ap: the aprgument pointer of the variadic function
- *@counter: character counter
- *Return: returns nothing
+ * handle_format - executes the right function
+ * @args: the argsrgument pointer of the variadic function
+ * @c: the character to check
+ * @len: character len
+ * Return: returns nothing
  */
 
-void print_address(va_list ap, int *counter)
-{
-	unsigned long int addrr;
-
-	addrr = va_arg(ap, unsigned long int);
-	if (addrr)
-	{
-		*counter += putstr("0x", 0);
-		put_address(addrr, counter);
-	}
-	else
-		*counter += putstr("(nil)", 0);
-}
-
-/**
- *select_id - executes the right function
- *@ap: the aprgument pointer of the variadic function
- *@c: the character to check
- *@counter: character counter
- *Return: returns nothing
- */
-
-void select_id(va_list ap, int c, int *counter)
+void handle_format(va_list args, int c, int *len)
 {
 	if (c == 'c')
-		*counter += _putchar(va_arg(ap, int));
+		*len += _putchar(va_arg(args, int));
 	else if (c == 's')
-		*counter += putstr(va_arg(ap, char *), 0);
+		*len += _putstr(va_arg(args, char *), 0);
 	else if (c == '%')
-		*counter += _putchar('%');
+		*len += _putchar('%');
 	else if (c == 'd' || c == 'i')
-		putnbr(va_arg(ap, int), counter);
+		_putnbr(va_arg(args, int), len);
 	else if (c == 'b')
-		putnbr_binary(va_arg(ap, int), counter);
+		_putnbr_binary(va_arg(args, int), len);
 	else if (c == 'u')
-		putunbr_octal(va_arg(ap, unsigned int), 10, counter);
+		_putnbr_base(va_arg(args, unsigned int), 0, 10, len);
 	else if (c == 'o')
-		putunbr_octal(va_arg(ap, unsigned int), 8, counter);
+		_putnbr_base(va_arg(args, unsigned int), 0, 8, len);
 	else if (c == 'x')
-		putnbr_hex(va_arg(ap, unsigned int), 0, counter);
+		_putnbr_base(va_arg(args, unsigned int), 0, 16, len);
 	else if (c == 'X')
-		putnbr_hex(va_arg(ap, unsigned int), 1, counter);
+		_putnbr_base(va_arg(args, unsigned int), 1, 16, len);
 	else if (c == 'S')
-		*counter += putstr(va_arg(ap, char *), 1);
+		*len += _putstr(va_arg(args, char *), 1);
 	else if (c == 'p')
-		print_address(ap, counter);
+	{
+		*len += _putstr("0x", 0);
+		_putnbr_base(va_arg(args, unsigned long int), 0, 16, len);
+	}
 	else if (c == 'r')
-		*counter += rev_str(va_arg(ap, char *));
+		*len += _putrev(va_arg(args, char *));
 	else if (c == 'R')
-		*counter += rot13(va_arg(ap, char *));
+		*len += _putrot13(va_arg(args, char *));
 	else
 	{
-		*counter += _putchar('%');
-		*counter += _putchar(c);
+		*len += _putchar('%');
+		*len += _putchar(c);
 	}
 }
 
 /**
- *_printf - prints a formatted string
- *@format: the format of the string to print
- *Return: the number of characters printed
+ * _printf - prints a formatted string
+ * @format: the format of the string to print
+ * Return: the number of characters printed
  */
 
 int _printf(const char *format, ...)
 {
 	int i = 0;
-	int counter = 0;
-	va_list ap;
+	int len = 0;
+	va_list args;
 
-	va_start(ap, format);
+	va_start(args, format);
 	if (!format)
 		return (-1);
 	while (format[i])
@@ -86,12 +68,12 @@ int _printf(const char *format, ...)
 			i++;
 			if (!format[i])
 				return (-1);
-			select_id(ap, format[i], &counter);
+			handle_format(args, format[i], &len);
 		}
 		else
-			counter += _putchar(format[i]);
+			len += _putchar(format[i]);
 		i++;
 	}
-	va_end(ap);
-	return (counter);
+	va_end(args);
+	return (len);
 }

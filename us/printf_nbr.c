@@ -1,42 +1,42 @@
 #include "main.h"
 
 /**
- * _putnbr - prints a number to stdout
+ * __putnbr - prints a number to stdout
  * @n: the number to print
- * @counter: the address of the counter of printed characters
+ * @len: the address of the len of printed characters
  * Return: nothing
  */
 
-void _putnbr(int n, int *counter)
+void __putnbr(int n, int *len)
 {
 	if (n == -2147483648)
 	{
-		_putstr("-2147483648", counter);
+		_putstr("-2147483648", len);
 		return;
 	}
 	if (n < 0)
 	{
-		_putchar('-', counter);
+		_putchar('-', len);
 		n = -n;
 	}
 	if (n >= 0 && n < 10)
-		_putchar(n + '0', counter);
+		_putchar(n + '0', len);
 	else
 	{
-		_putnbr(n / 10, counter);
-		_putnbr(n % 10, counter);
+		__putnbr(n / 10, len);
+		__putnbr(n % 10, len);
 	}
 }
 
 /**
- * _putnbr_base - print a decimal number to anny base you decide
+ * __putnbr_base - print a decimal number to anny base you decide
  * @nbr: the number to print
  * @base: base
  * @spes: the specifier to choose either lower base or upper
  * @count: pointer to the count of printed bytes
  */
 
-void _putnbr_base(unsigned int nbr, unsigned int base, char spes, int *count)
+void __putnbr_base(unsigned int nbr, unsigned int base, char spes, int *count)
 {
 	char *lower = "0123456789abcdef";
 	char *upper = "0123456789ABCDEF";
@@ -55,7 +55,7 @@ void _putnbr_base(unsigned int nbr, unsigned int base, char spes, int *count)
 
 	else
 	{
-		_putnbr_base((nbr / base), base, spes, count);
-		_putnbr_base((nbr % base), base, spes, count);
+		__putnbr_base((nbr / base), base, spes, count);
+		__putnbr_base((nbr % base), base, spes, count);
 	}
 }
