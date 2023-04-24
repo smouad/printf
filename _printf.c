@@ -47,10 +47,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (_strchr("cdibupxXsSorR%", format[i]) == 0)
-			{
+			if (!format[i])
 				return (-1);
-			}
 			format_handler(args, format[i], &count);
 		}
 		else
