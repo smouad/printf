@@ -30,31 +30,31 @@ void select_id(va_list ap, int c, int *counter)
 		*counter += putstr(va_arg(ap, char *), 0);
 	else if (c == '%')
 		*counter += _putchar('%');
-	else if (c == 'd' || c == 'i')
-		putnbr(va_arg(ap, int), counter);
-	else if (c == 'b')
-		putnbr_binary(va_arg(ap, int), counter);
-	else if (c == 'u')
-		putunbr_octal(va_arg(ap, unsigned int), 10, counter);
-	else if (c == 'o')
-		putunbr_octal(va_arg(ap, unsigned int), 8, counter);
-	else if (c == 'x')
-		putnbr_hex(va_arg(ap, unsigned int), 0, counter);
-	else if (c == 'X')
-		putnbr_hex(va_arg(ap, unsigned int), 1, counter);
-	else if (c == 'S')
-		*counter += putstr(va_arg(ap, char *), 1);
-	else if (c == 'p')
-		print_address(ap, counter);
-	else if (c == 'r')
-		*counter += rev_str(va_arg(ap, char *));
-	else if (c == 'R')
-		*counter += rot13(va_arg(ap, char *));
-	else
-	{
-		*counter += _putchar('%');
-		*counter += _putchar(c);
-	}
+	// else if (c == 'd' || c == 'i')
+	// 	putnbr(va_arg(ap, int), counter);
+	// else if (c == 'b')
+	// 	putnbr_binary(va_arg(ap, int), counter);
+	// else if (c == 'u')
+	// 	putunbr_octal(va_arg(ap, unsigned int), 10, counter);
+	// else if (c == 'o')
+	// 	putunbr_octal(va_arg(ap, unsigned int), 8, counter);
+	// else if (c == 'x')
+	// 	putnbr_hex(va_arg(ap, unsigned int), 0, counter);
+	// else if (c == 'X')
+	// 	putnbr_hex(va_arg(ap, unsigned int), 1, counter);
+	// else if (c == 'S')
+	// 	*counter += putstr(va_arg(ap, char *), 1);
+	// else if (c == 'p')
+	// 	print_address(ap, counter);
+	// else if (c == 'r')
+	// 	*counter += rev_str(va_arg(ap, char *));
+	// else if (c == 'R')
+	// 	*counter += rot13(va_arg(ap, char *));
+	// else
+	// {
+	// 	*counter += _putchar('%');
+	// 	*counter += _putchar(c);
+	// }
 }
 
 /**
