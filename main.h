@@ -15,8 +15,6 @@ void print_d(int nbr, int *count);
 void print_s(char *str, int *count);
 void print_c(int c, int *count);
 void print_r(char *str, int *count);
-void print_o(unsigned int o, int *count);
-void print_u(unsigned int u, int *count);
 
 
 #endif
