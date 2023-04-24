@@ -21,5 +21,5 @@ void print_r(char *str, int *count)
 	;
 
 	while (len--)
-		print_c(str[len], count);
+		_putchar(str[len], count);
 }

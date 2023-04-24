@@ -11,12 +11,12 @@ void print_d(int nbr, int *count)
 { 
 	if (nbr < 0)
 	{
-		print_c('-', count);
+		_putchar('-', count);
 		nbr = -nbr;
 	}
 
 	if (nbr <= 9)
-		print_c(nbr + '0', count);
+		_putchar(nbr + '0', count);
 	
 	else
 	{

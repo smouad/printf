@@ -10,11 +10,11 @@
 void format_handler(va_list args, char pres, int *count)
 {
 	if (pres == 'c')
-		print_c(va_arg(args, int), count);
+		_putchar(va_arg(args, int), count);
 	else if (pres == 's')
 		print_s(va_arg(args, char*), count);
 	else if (pres == '%')
-		print_c('%', count);
+		_putchar('%', count);
 	else if (pres == 'd' || pres == 'i')
 		print_d(va_arg(args, int), count);
 	else if (pres == 'r')
@@ -27,7 +27,7 @@ void format_handler(va_list args, char pres, int *count)
 		print_base(va_arg(args, int), 16, 'x', count);
 	}
 	else
-		print_c(pres ,count);
+		_putchar(pres ,count);
 }
 
 /**
@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 			format_handler(args, format[i], &count);
 		}
 		else
-			print_c(format[i], &count);
+			_putchar(format[i], &count);
 		i++;
 	}
 	va_end(args);

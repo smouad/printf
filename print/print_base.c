@@ -19,12 +19,12 @@ void print_base(unsigned int nbr, unsigned int base, char spes, int *count)
 
 	if (nbr < 0)
 	{
-		print_c('-', count);
+		_putchar('-', count);
 		nbr = -nbr;
 	}
 
 	if (nbr < base)
-		print_c(list[nbr], count);
+		_putchar(list[nbr], count);
 
 	else
 	{

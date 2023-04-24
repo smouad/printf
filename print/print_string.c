@@ -16,6 +16,6 @@ void print_S(char *str, int *count)
 			if (str[i] == '\0')
 			return;
 		}
-		print_c(str[i], count);
+		_putchar(str[i], count);
 	}
 }
