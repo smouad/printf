@@ -31,7 +31,10 @@ void format_handler(va_list args, char pres, int *count)
 	else if (pres == 'R')
 		_putrot13(va_arg(args, char *), count);
 	else
-		_putchar(pres ,count);
+	{
+		_putchar('%', count);
+		_putchar(pres, count);
+	}
 }
 
 /**
