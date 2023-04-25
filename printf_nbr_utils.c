@@ -67,13 +67,11 @@ void print_hex(unsigned long int number, int *len)
 
 /**
 * print_address - prints the address of a variable
-* @args: the variable to print
+* @address: the variable to print
 * @len: pointer to len of characters printed
 */
-void print_address(va_list args, int *len)
+void print_address(unsigned long int address, int *len)
 {
-	unsigned long int address = (unsigned long int)va_arg(args, void *);
-
 	*len += _putstr("0x", 0);
 	print_hex(address, len);
 }
