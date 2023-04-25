@@ -50,3 +50,30 @@ void _putnbr_base(unsigned int n, int isupper, int base, int *len)
 		_putnbr_base(n % base, isupper, base, len);
 	}
 }
+
+/**
+ * print_hex - prints the hex representation of a number
+ * @number: the number to print
+ * @len: pointer to count of characters printed
+ */
+void print_hex(unsigned long int number, int *len)
+{
+	char *base = "0123456789abcdef";
+
+	if (number > 15)
+		print_hex(number / 16, len);
+	*len += _putchar(base[number % 16]);
+}
+
+/**
+* print_address - prints the address of a variable
+* @args: the variable to print
+* @len: pointer to len of characters printed
+*/
+void print_address(va_list args, int *len)
+{
+	unsigned long int address = (unsigned long int)va_arg(args, void *);
+
+	*len += _putstr("0x", 0);
+	print_hex(address, len);
+}
