@@ -12,7 +12,7 @@ int main(void)
 {
 	void *p;
 	/* Test 1 */
-// _printf("Let's print a simple sentence[%p].\n");
+_printf("Let's print a simple sentence[%p].\n");
 printf("Let's print a simple sentence[%p].\n");
 printf("Let's print a simple sentence[%p].\n");
 
