@@ -72,6 +72,11 @@ void print_hex(unsigned long int number, int *len)
 */
 void print_address(unsigned long int address, int *len)
 {
-	*len += _putstr("0x", 0);
-	print_hex(address, len);
+	if (address)
+	{
+		*len += _putstr("0x", 0);
+		print_hex(address, len);
+	}
+	else
+		*len += _putstr("(nil)", 0);
 }
